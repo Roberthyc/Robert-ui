@@ -1,5 +1,5 @@
-import Carousel from './Carousel';
-import CarouselItem from './Carousel/item'
+import Carousel from './index.vue';
+import CarouselItem from './item.vue'
 
 // 先声明一个自定义UI的容器
 let RobertUI = {
