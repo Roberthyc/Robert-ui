@@ -34,7 +34,7 @@ export default {
   },
   setup (props, ctx) {
     const dotClick = (index) => {
-        ctx.emit('dotClick', index);
+        ctx.emit('dotClick', index); 
     }
 
     return {
