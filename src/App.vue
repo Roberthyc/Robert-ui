@@ -93,13 +93,13 @@ export default {
 </style> -->
 
 <!-- 递归菜单组件 -->
-<template>
+<!-- <template>
   <div id="app">
     <div class="side-bar">
       <tree-menu>
-        <div v-for="item of menuData">
-          <!-- 如果没有孩子才会执行menuitem，否则执行submenu -->
-          <menu-item
+        <div v-for="item of menuData"> -->
+          <!-- // 如果没有孩子才会执行menuitem，否则执行ReSubMenu -->
+          <!-- <menu-item
             v-if="!item.children"
             :key="item.id"
           >
@@ -132,4 +132,37 @@ export default {
   .side-bar {
     width: 300px;
   }
+</style> -->
+
+<template>
+  <div>
+    <!-- <message-ui
+      type="message"
+      message="This is a warning text"
+      :duration="3000"
+    ></message-ui> -->
+    <button @click="Message.success({
+      message: 'This is a success text'
+    })"> Show Success</button>
+    <button @click="Message.warning({
+      message: 'This is a warning text'
+    })"> Show Warning</button>
+    <button @click="Message({
+      type: types.MESSAGE,
+      message: 'This is a message text'
+    })"> Show Message</button>
+    <button @click="Message({
+      type: types.ERROR,
+      message: 'This is a error text'
+    })"> Show Error</button>
+  </div>
+</template>
+
+<script setup>
+  import Message, {types} from './libs/Robert-ui/Message';
+  // import MessageUi from './libs/Robert-ui/Message/Message.vue'
+</script>
+
+<style>
+
 </style>
