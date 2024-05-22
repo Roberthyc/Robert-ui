@@ -1,8 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-// import RobertUI from './libs/Robert-ui/Carousel';
-import RobertUI from './libs/Robert-ui/Magnifier'
+import RobertUI from './libs/Robert-ui/';
 
 // 定义特性标志
 window.__VUE_PROD_DEVTOOLS__ = false;

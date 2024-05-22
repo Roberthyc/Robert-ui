@@ -1,5 +1,6 @@
-<template>
-  <!-- <div id="app">
+<!-- 轮播图组件 -->
+<!-- <template>
+  <div id="app">
     <div class="container">
       <carousel
         :autoplay="true"
@@ -16,8 +17,35 @@
         </car-item>
       </carousel>
     </div>
-  </div> -->
+  </div>
 
+  
+</template> 
+
+<script>
+import carData from '@/data/Carousel'
+
+export default {
+  name: 'App',
+  setup () {
+    return {
+      carData  
+    }
+  }
+}
+
+</script>
+
+<style lang="scss" scoped>
+  .container {
+    width: 520px;
+    height: 280px;
+    margin: 150px auto;
+  }
+</style> -->
+
+<!-- 放大镜组件 -->
+<!-- <template>
   <div class="wrapper">
     <Magnifier
       :link="link"
@@ -33,17 +61,6 @@
 </template>
 
 <script>
-// import carData from '@/data/Carousel'
-
-// export default {
-//   name: 'App',
-//   setup () {
-//     return {
-//       carData  
-//     }
-//   }
-// }
-
 import {reactive, toRefs} from 'vue'
 
 export default {
@@ -67,16 +84,52 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-  // .container {
-  //   width: 520px;
-  //   height: 280px;
-  //   margin: 150px auto;
-  // }
-
+<style lang="scss" >
   .wrapper {
-    width: 500px;
-    height: 748px;
-    margin: 100px auto;
+      width: 500px;
+      height: 748px;
+      margin: 100px auto;
+  }
+</style> -->
+
+<!-- 递归菜单组件 -->
+<template>
+  <div id="app">
+    <div class="side-bar">
+      <tree-menu>
+        <div v-for="item of menuData">
+          <!-- 如果没有孩子才会执行menuitem，否则执行submenu -->
+          <menu-item
+            v-if="!item.children"
+            :key="item.id"
+          >
+            <a href="">{{ item.title }}</a>
+          </menu-item>
+          <re-sub-menu
+            :key="item.id"
+            :data="item"
+            v-else
+          ></re-sub-menu>
+        </div>
+      </tree-menu>
+    </div>
+  </div>
+</template>
+
+<script>
+import menuData from '@/data/menu'
+export default { 
+  name: 'App',
+  setup () {
+    return {
+      menuData
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+  .side-bar {
+    width: 300px;
   }
 </style>
