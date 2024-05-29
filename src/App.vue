@@ -134,14 +134,14 @@ export default {
   }
 </style> -->
 
-<template>
-  <div>
+<!-- <template>
+  <div> -->
     <!-- <message-ui
       type="message"
       message="This is a warning text"
       :duration="3000"
     ></message-ui> -->
-    <button @click="Message.success({
+    <!--<button @click="Message.success({
       message: 'This is a success text'
     })"> Show Success</button>
     <button @click="Message.warning({
@@ -164,5 +164,60 @@ export default {
 </script>
 
 <style>
+
+</style> -->
+
+<template>
+  <div>
+    <button @click="showMessageBox"> Show MessageBox</button>
+    <button @click="showConfirmMessage"> Show Confirm MessageBox</button>
+    <button @click="showPromptMessageBox"> Show Prompt MessageBox</button>
+  </div>
+</template>
+
+<script setup>
+  import { MessageBox } from './libs/Robert-ui/index.js'
+
+  const showMessageBox = () => {
+    MessageBox({
+      confirmBtnText: '确定',
+      title: 'MessageBox',
+      content: 'This is a content.'
+    }).then(() => {
+      console.log('MessageBox resolve');
+    }).catch(() => {
+      console.log('MessageBox reject');
+    });
+  }
+
+  const showConfirmMessage = () => {
+    MessageBox.confirm({
+      showCancelBtn: true,
+      title: 'Confirm MessageBox',
+      cancelBtnText: '取消',
+      content: 'This is a ConfirmMessageBox content.'
+    }).then(() => {
+      console.log('ConfirmMessageBox resolve');
+    }).catch(() => {
+      console.log('ConfirmMessageBox reject');
+    });
+  }
+
+  const showPromptMessageBox = () => {
+    MessageBox.prompt({
+      showCancelBtn: true,
+      title: 'Prompt MessageBox',
+      confirmBtnText: '确定',
+      cancelBtnText: '取消',
+      content: 'This is a PromptMessageBox content.'
+    }).then((value) => {
+      console.log('PromptMessageBox resolve', value);
+    }).catch(() => {
+      console.log('PromptMessageBox reject');
+    });
+  }
+</script>
+
+<style lang="scss" scoped>
 
 </style>

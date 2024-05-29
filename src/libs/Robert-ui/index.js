@@ -6,6 +6,7 @@ import MenuItem from './TreeMenu/MenuItem.vue';
 import SubMenu from './TreeMenu/SubMenu.vue';
 import ReSubMenu from './TreeMenu/ReSubMenu.vue';
 import './resets.css' // 告诉你实际上可以在这里定义部分标签的全局css样式
+import MessageBox from './MessageBox'
 
 
 // 先声明一个自定义UI的容器
@@ -24,3 +25,4 @@ RobertUI.install = function (Vue) {
 }
 
 export default RobertUI;
+export {MessageBox};
