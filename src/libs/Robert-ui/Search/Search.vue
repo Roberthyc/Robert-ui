@@ -57,7 +57,7 @@ export default {
             const _value = e.target.value;
             if (_value.length > 0) {
                 this.searchedScore = Number(_value);
-                this.filterStudents();
+                this.filterStudents();m 
             }
         },
         setCurrentRegular (regular) {

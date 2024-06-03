@@ -223,10 +223,10 @@ export default {
 
 </style> -->
 
-<template>
-  <div id="app">
+<!-- <template>
+  <div id="app">-->
     <!-- <demo></demo> -->
-    <search></search>
+    <!--<search></search>
   </div>
 </template>
 
@@ -251,4 +251,45 @@ export default {
 
 <style lang="scss" scoped>
 
+</style> -->
+
+<template>
+  <div class="wrapper">
+    <Stars 
+      :num="num" 
+      :size="size"
+      @getStarNum="getStarNum"
+    />
+  </div>
+</template>
+
+<script>
+import { reactive, toRefs } from 'vue';
+
+export default {
+  name: 'App',
+  setup () {
+    const state = reactive({
+      num: 1,
+      size: 50
+    })
+
+    // 在这里我们拿到了点亮的星星数量，之后就可以通过这个来开展相应的业务逻辑了，比如传递给后端数据库进行统计等等
+    const getStarNum = (num) => {
+      console.log(num); 
+    }
+
+    return {
+      getStarNum,
+      ...toRefs(state)
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+  .wrapper {
+    width: 375px;
+    margin: 100px auto;
+  }
 </style>
