@@ -167,7 +167,8 @@ export default {
 
 </style> -->
 
-<template>
+<!-- MessageBox组件 -->
+<!-- <template>
   <div>
     <button @click="showMessageBox"> Show MessageBox</button>
     <button @click="showConfirmMessage"> Show Confirm MessageBox</button>
@@ -216,6 +217,36 @@ export default {
       console.log('PromptMessageBox reject');
     });
   }
+</script>
+
+<style lang="scss" scoped>
+
+</style> -->
+
+<template>
+  <div id="app">
+    <!-- <demo></demo> -->
+    <search></search>
+  </div>
+</template>
+
+<script>
+import Demo from './libs/Robert-ui/Search/Demo.vue';
+import Search from './libs/Robert-ui/Search/Search.vue'
+import students from '../src/data/students'
+
+export default {
+  name: 'App',
+  components: {
+    // Demo
+    Search
+  },
+  data() {
+    return {
+      students
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>
