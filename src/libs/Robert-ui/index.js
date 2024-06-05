@@ -8,7 +8,7 @@ import ReSubMenu from './TreeMenu/ReSubMenu.vue';
 import './resets.css' // 告诉你实际上可以在这里定义部分标签的全局css样式
 import MessageBox from './MessageBox'
 import Stars from './Stars/Stars.vue'
-
+import Selector from './Selector'
 
 // 先声明一个自定义UI的容器
 let RobertUI = {
@@ -24,6 +24,7 @@ RobertUI.install = function (Vue) {
     Vue.component(SubMenu.name, SubMenu);
     Vue.component(ReSubMenu.name, ReSubMenu);
     Vue.component(Stars.name, Stars);
+    Vue.component(Selector.name, Selector);
 }
 
 export default RobertUI;

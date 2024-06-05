@@ -253,7 +253,7 @@ export default {
 
 </style> -->
 
-<template>
+<!-- <template>
   <div class="wrapper">
     <Stars 
       :num="num" 
@@ -291,5 +291,43 @@ export default {
   .wrapper {
     width: 375px;
     margin: 100px auto;
+  }
+</style> -->
+
+<template>
+   <div id="app">
+    <div class="container">
+      <Selector
+        :data="selectorData"
+        placeholder="请选择框架"
+        @setItemValue="setItemValue"
+      />
+    </div>
+   </div> 
+</template>
+
+<script>
+import selectorData from '@/data/selector'
+
+export default {
+    name: 'App',
+    setup () {
+      const setItemValue = (value) => {
+        console.log(value);
+      }
+
+      return {
+        selectorData,
+        setItemValue
+      }
+    }
+}
+</script>
+
+<style lang="scss" scoped>
+  .container {
+    width: 500px;
+    height: 1000px;
+    margin: 200px auto;
   }
 </style>
